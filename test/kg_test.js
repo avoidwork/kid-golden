@@ -17,32 +17,44 @@ describe("Kid Golden - kg()", function () {
 	});
 
 	it("should be ready", function () {
-		assert.strictEqual(lkg.ready, true);
+		assert.strictEqual(lkg.ready === true, true);
 	});
 
 	it("should not be done", function () {
-		assert.strictEqual(lkg.done, false);
+		assert.strictEqual(lkg.done === false, true);
+	});
+
+	it("should have process() method", function () {
+		assert.strictEqual(typeof lkg.process, "function");
+	});
+
+	it("should have results in prepared[] from process()", function () {
+		assert.strictEqual(lkg.process(), true);
+		assert.strictEqual(lkg.prepared.length > 0, true);
+		assert.strictEqual(lkg.data, null);
 	});
 
 	it("should have render() method", function () {
 		assert.strictEqual(typeof lkg.render, "function");
 	});
 
-	lkg.render();
+	it("should get a string from render()", function () {
+		assert.strictEqual(typeof lkg.render(), "string");
+	});
 
 	it("should not be ready", function () {
-		assert.strictEqual(lkg.ready, false);
+		assert.strictEqual(lkg.ready === false, true);
 	});
 
 	it("should be done", function () {
-		assert.strictEqual(lkg.done, true);
+		assert.strictEqual(lkg.done === true, true);
 	});
 
 	it("should have output", function () {
 		assert.strictEqual(typeof lkg.output, "string");
 	});
 
-	it("should have prepared strings", function () {
+	it("should not have prepared strings", function () {
 		assert.strictEqual(lkg.prepared.length, 0);
 	});
 });

@@ -17,6 +17,22 @@ class KidGolden {
 		return this;
 	}
 
+	process () {
+		let result;
+
+		try {
+			this.prepared = (Array.isArray(this.data) ? this.data : [this.data]).map(i => {
+				return JSON.stringify(i);
+			});
+			this.data = null;
+			result = true;
+		} catch (err) {
+			result = false;
+		}
+
+		return result;
+	}
+
 	render () {
 		if (this.done === false && this.ready) {
 			this.output = JSON.stringify(this.prepared);

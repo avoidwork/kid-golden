@@ -4,7 +4,7 @@ import {increment} from "./increment.js";
 import {labels} from "./labels.js";
 
 class KidGolden {
-	constructor (data, id, lang) {
+	constructor (id = "", data = [], lang = "en-US") {
 		this.id = id;
 		this.data = data;
 		this.done = false;

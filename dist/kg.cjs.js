@@ -28,7 +28,7 @@ const labels = new Map([
 ]);
 
 class KidGolden {
-	constructor (data, id, lang) {
+	constructor (id = "", data = [], lang = "en-US") {
 		this.id = id;
 		this.data = data;
 		this.done = false;

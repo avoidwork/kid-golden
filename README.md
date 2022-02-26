@@ -46,5 +46,5 @@ Micro or monolithic services
 ```
 
 ## License
-Copyright (c) 2022 Jason Mulligan
+Copyright (c) 2022 Jason Mulligan.
 Licensed under the BSD-3-Clause license.

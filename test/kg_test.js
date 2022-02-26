@@ -5,11 +5,17 @@ const path = require("path"),
 	{kg} = require(path.join(__dirname, "..", "dist", "kg.cjs.js")),
 	data = require(path.join(__dirname, "kg_test.json"));
 
-describe("Kid Golden - kg()", function () {
-	const lkg = kg({data});
+describe("Kid Golden instance - kg()", function () {
+	const lkg = kg({data}),
+		lkg2 = kg({data});
 
-	it("should have an id", function () {
+	it("should have a unique id", function () {
 		assert.strictEqual(lkg.id, "kg1");
+		assert.strictEqual(lkg.id !== lkg2.id, true);
+	});
+
+	it("should have data", function () {
+		assert.strictEqual(lkg.data !== null, true);
 	});
 
 	it("should have a lang", function () {
@@ -50,11 +56,15 @@ describe("Kid Golden - kg()", function () {
 		assert.strictEqual(lkg.done === true, true);
 	});
 
-	it("should have output", function () {
-		assert.strictEqual(typeof lkg.output, "string");
-	});
-
 	it("should not have prepared strings", function () {
 		assert.strictEqual(lkg.prepared.length, 0);
+	});
+
+	it("should not have data", function () {
+		assert.strictEqual(lkg.data, null);
+	});
+
+	it("should have output", function () {
+		assert.strictEqual(typeof lkg.output, "string");
 	});
 });

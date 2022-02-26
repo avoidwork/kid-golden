@@ -4,9 +4,9 @@ export function kg({ data, id, lang }?: {
     lang?: string;
 }): KidGolden;
 declare class KidGolden {
-    constructor(id?: string, data?: any[], lang?: string);
+    constructor(id?: string, data?: {}[], lang?: string);
     id: string;
-    data: any[];
+    data: {}[];
     done: boolean;
     lang: string;
     labels: {};

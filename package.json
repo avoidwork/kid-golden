@@ -8,8 +8,9 @@
   "module": "dist/kg.esm.js",
   "types": "dist/kg.d.ts",
   "scripts": {
-    "build": "rollup --config && npm run test",
+    "build": "rollup --config",
     "test": "eslint src/*.js test/*.js && mocha test/*.js",
+    "build:test": "npm run build && npm run test",
     "types": "npx typescript src/*.js --declaration --allowJs --emitDeclarationOnly --outDir dist"
   },
   "repository": {

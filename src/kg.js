@@ -18,11 +18,11 @@ class KidGolden {
 	}
 
 	render () {
-		if (this.prepared.length > 0 && this.done === false && this.ready) {
+		if (this.done === false && this.ready) {
 			this.output = JSON.stringify(this.prepared);
 			this.prepared.length = 0;
-			this.ready = false;
 			this.done = true;
+			this.ready = false;
 		}
 
 		return this.output;
@@ -30,7 +30,7 @@ class KidGolden {
 }
 
 function kg ({data = [], id = `kg${increment()}`, lang = "en-US"} = {}) {
-	return new KidGolden({data, id, lang});
+	return new KidGolden(data, id, lang);
 }
 
 export {kg};

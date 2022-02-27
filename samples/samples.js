@@ -21,11 +21,12 @@
 		if (lkg.process()) {
 			tpl.querySelector("h2").innerText = `${title} (${type})`;
 			tpl.querySelector("p").innerText = description;
-			lkg.target = tpl.querySelector("div.sample");
-			lkg.render();
-			tpl.querySelector("code").innerHTML = clone(lkg.target.querySelector("script").innerHTML);
-			el.appendChild(tpl);
-			log(`Rendered ${type} diagram`);
+			tpl.querySelector("pre").innerText = JSON.stringify(lkg.output, null, 2);
+
+			render(() => {
+				el.appendChild(tpl);
+				log(`Rendered ${type} diagram`);
+			});
 		}
 	}
 

@@ -19,42 +19,17 @@ describe("Kid Golden instance - kg()", function () {
 		assert.strictEqual(lkg.data !== null, true);
 	});
 
-	it("should be ready", function () {
-		assert.strictEqual(lkg.ready === true, true);
-	});
-
 	it("should not be done", function () {
 		assert.strictEqual(lkg.done === false, true);
 	});
 
 	it("should have process() method", function () {
 		assert.strictEqual(typeof lkg.process, "function");
-	});
-
-	it("should have data in prepared{} from process()", function () {
 		assert.strictEqual(lkg.process(), true);
-		assert.strictEqual(Object.keys(lkg.prepared).length > 0, true);
-		assert.strictEqual(lkg.data, null);
-	});
-
-	it("should have render() method", function () {
-		assert.strictEqual(typeof lkg.render, "function");
-	});
-
-	it("should get a string from render()", function () {
-		assert.strictEqual(typeof lkg.render(), "string");
-	});
-
-	it("should not be ready", function () {
-		assert.strictEqual(lkg.ready === false, true);
 	});
 
 	it("should be done", function () {
 		assert.strictEqual(lkg.done === true, true);
-	});
-
-	it("should not have prepared strings", function () {
-		assert.strictEqual(Object.keys(lkg.prepared).length, 0);
 	});
 
 	it("should not have data", function () {
@@ -62,6 +37,6 @@ describe("Kid Golden instance - kg()", function () {
 	});
 
 	it("should have output", function () {
-		assert.strictEqual(typeof lkg.output, "string");
+		assert.strictEqual(lkg.output !== null, true);
 	});
 });

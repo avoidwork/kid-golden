@@ -23,7 +23,7 @@
 			tpl.querySelector("p").innerText = description;
 			lkg.target = tpl.querySelector("div.sample");
 			lkg.render();
-			//tpl.querySelector("code").innerHTML = clone(lkg.target.innerHTML).replace(/<(\/)?script(\s[^>]+)?>/g, "<$1code>");
+			tpl.querySelector("code").innerHTML = clone(lkg.target.querySelector("script").innerHTML);
 			el.appendChild(tpl);
 			log(`Rendered ${type} diagram`);
 		}

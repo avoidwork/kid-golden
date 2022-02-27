@@ -2,22 +2,711 @@
   "sunburst": [
     {
       "title": "Web Application Stack",
-      "description": "Sample fullstack application",
-      "data": []
+      "description": "Load balanced 4x NGINX which reverse proxy to 8x API instances with 3x MongoDB & 1x Redis.",
+      "data": [
+        {
+          "id": "LB-001",
+          "label": "Load Balancer",
+          "parent": [],
+          "children": [
+            "NGINX-001",
+            "NGINX-002",
+            "NGINX-003",
+            "NGINX-004"
+          ],
+          "requires": [],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "NGINX-001",
+          "label": "NGINX",
+          "parent": [
+            "LB-001"
+          ],
+          "children": [
+            "API-001",
+            "API-002",
+            "API-003",
+            "API-004",
+            "API-005",
+            "API-006",
+            "API-007",
+            "API-008"
+          ],
+          "requires": [
+            "RULES-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "NGINX-002",
+          "label": "NGINX",
+          "parent": [
+            "LB-001"
+          ],
+          "children": [
+            "API-009",
+            "API-010",
+            "API-011",
+            "API-012",
+            "API-013",
+            "API-014",
+            "API-015",
+            "API-016"
+          ],
+          "requires": [
+            "RULES-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "NGINX-003",
+          "label": "NGINX",
+          "parent": [
+            "LB-001"
+          ],
+          "children": [
+            "API-017",
+            "API-018",
+            "API-019",
+            "API-020",
+            "API-021",
+            "API-022",
+            "API-023",
+            "API-024"
+          ],
+          "requires": [
+            "RULES-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "NGINX-004",
+          "label": "NGINX",
+          "parent": [
+            "LB-001"
+          ],
+          "children": [
+            "API-025",
+            "API-026",
+            "API-027",
+            "API-028",
+            "API-029",
+            "API-030",
+            "API-031",
+            "API-032"
+          ],
+          "requires": [
+            "RULES-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-001",
+          "label": "API Server",
+          "parent": [
+            "NGINX-001"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-002",
+          "label": "API Server",
+          "parent": [
+            "NGINX-001"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-003",
+          "label": "API Server",
+          "parent": [
+            "NGINX-001"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-004",
+          "label": "API Server",
+          "parent": [
+            "NGINX-001"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-005",
+          "label": "API Server",
+          "parent": [
+            "NGINX-001"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-006",
+          "label": "API Server",
+          "parent": [
+            "NGINX-001"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-007",
+          "label": "API Server",
+          "parent": [
+            "NGINX-001"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-008",
+          "label": "API Server",
+          "parent": [
+            "NGINX-001"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-009",
+          "label": "API Server",
+          "parent": [
+            "NGINX-002"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-010",
+          "label": "API Server",
+          "parent": [
+            "NGINX-002"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-011",
+          "label": "API Server",
+          "parent": [
+            "NGINX-002"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-012",
+          "label": "API Server",
+          "parent": [
+            "NGINX-002"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-013",
+          "label": "API Server",
+          "parent": [
+            "NGINX-002"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-014",
+          "label": "API Server",
+          "parent": [
+            "NGINX-002"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-015",
+          "label": "API Server",
+          "parent": [
+            "NGINX-002"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-016",
+          "label": "API Server",
+          "parent": [
+            "NGINX-002"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-017",
+          "label": "API Server",
+          "parent": [
+            "NGINX-003"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-018",
+          "label": "API Server",
+          "parent": [
+            "NGINX-003"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-019",
+          "label": "API Server",
+          "parent": [
+            "NGINX-003"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-020",
+          "label": "API Server",
+          "parent": [
+            "NGINX-003"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-021",
+          "label": "API Server",
+          "parent": [
+            "NGINX-003"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-022",
+          "label": "API Server",
+          "parent": [
+            "NGINX-003"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-023",
+          "label": "API Server",
+          "parent": [
+            "NGINX-003"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-024",
+          "label": "API Server",
+          "parent": [
+            "NGINX-003"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-025",
+          "label": "API Server",
+          "parent": [
+            "NGINX-004"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-026",
+          "label": "API Server",
+          "parent": [
+            "NGINX-004"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-027",
+          "label": "API Server",
+          "parent": [
+            "NGINX-004"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-028",
+          "label": "API Server",
+          "parent": [
+            "NGINX-004"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-029",
+          "label": "API Server",
+          "parent": [
+            "NGINX-004"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-030",
+          "label": "API Server",
+          "parent": [
+            "NGINX-004"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-031",
+          "label": "API Server",
+          "parent": [
+            "NGINX-004"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "API-032",
+          "label": "API Server",
+          "parent": [
+            "NGINX-004"
+          ],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002",
+            "MONGO-003",
+            "REDIS-001"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "MONGO-001",
+          "label": "MongoDB",
+          "parent": [],
+          "children": [],
+          "requires": [
+            "MONGO-002",
+            "MONGO-003"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "MONGO-002",
+          "label": "MongoDB",
+          "parent": [],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-003"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "MONGO-003",
+          "label": "MongoDB",
+          "parent": [],
+          "children": [],
+          "requires": [
+            "MONGO-001",
+            "MONGO-002"
+          ],
+          "layer": [
+            "Service"
+          ]
+        },
+        {
+          "id": "REDIS-001",
+          "label": "Redis",
+          "parent": [],
+          "children": [],
+          "requires": [],
+          "layer": [
+            "Service"
+          ]
+        }
+      ]
     }
   ],
-  "partition": [
-    {
-      "title": "Web Application Stack",
-      "description": "Sample fullstack application",
-      "data": []
-    }
-  ],
-  "circlepacking": [
-    {
-      "title": "Web Application Stack",
-      "description": "Sample fullstack application",
-      "data": []
-    }
-  ]
+  "partition": [],
+  "circlepacking": []
 }

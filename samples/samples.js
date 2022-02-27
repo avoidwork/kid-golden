@@ -6,16 +6,19 @@
 	}
 
 	function display (type = "", el = {}, {title = "", description = "", data = []}) {
-		const tpl = templates.get("diagram").cloneNode(true);
+		const tpl = templates.get("diagram").cloneNode(true),
+			lkg = kg(type, data);
 
-		tpl.querySelector("h2").innerText = title;
-		tpl.querySelector("p").innerText = description;
-		kg(type, data, tpl.querySelector("div[data-id='render']"));
+		if (lkg.process()) {
+			tpl.querySelector("h2").innerText = title;
+			tpl.querySelector("p").innerText = description;
+			tpl.querySelector("div[data-id='render']").innerHTML = lkg.render();
 
-		render(() => {
-			el.appendChild(tpl);
-			log(`Rendered ${type} diagram`);
-		});
+			render(() => {
+				el.appendChild(tpl);
+				log(`Rendered ${type} diagram`);
+			});
+		}
 	}
 
 	log("Hello! Lets render some diagrams!");

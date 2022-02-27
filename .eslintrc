@@ -5,6 +5,15 @@
     "es6": true,
     "amd": true
   },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "superInFunctions": true,
+      "classes": true,
+      "modules": [2]
+    }
+  },
   "globals": {
     "describe": true,
     "it": true

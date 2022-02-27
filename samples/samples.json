@@ -1,5 +1,23 @@
 {
-  "sunburst": [],
-  "partition": [],
-  "circlepacking": []
+  "sunburst": [
+    {
+      "title": "Web Application Stack",
+      "description": "Sample fullstack application",
+      "data": []
+    }
+  ],
+  "partition": [
+    {
+      "title": "Web Application Stack",
+      "description": "Sample fullstack application",
+      "data": []
+    }
+  ],
+  "circlepacking": [
+    {
+      "title": "Web Application Stack",
+      "description": "Sample fullstack application",
+      "data": []
+    }
+  ]
 }

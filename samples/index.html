@@ -17,9 +17,37 @@
 				font-family: arial, sans-serif;
 		}
 
+		header, div.diagram {
+				margin-bottom: 5em;
+		}
+
+		section {
+        column-count: 3;
+		}
+
+		section > * {
+        margin-right: 1em;
+		}
+
+		section > *:last-child {
+				margin-right: 0;
+		}
+
 		h1, h2, h3, h4, h5, h6 {
 				margin-top: 0;
 				padding-top: 0;
+		}
+
+		h1 {
+				font-size: 3em;
+		}
+
+		h2 {
+				font-size: 2em;
+		}
+
+		h3 {
+				font-size: 1em;
 		}
 	</style>
 	<script src="https://d3js.org/d3.v7.min.js" defer></script>
@@ -31,9 +59,10 @@
 		<h1>Kid Golden Samples</h1>
 		<p>Data driven system diagrams with d3.js & simple JSON Arrays.</p>
 	</header>
+	<section></section>
 	<template data-id="diagram">
 		<div class="diagram">
-			<h1>{{title}}</h1>
+			<h2>{{title}}</h2>
 			<p>{{description}}</p>
 			<div data-id="render" class="render"></div>
 		</div>

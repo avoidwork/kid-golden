@@ -1,18 +1,20 @@
 "use strict";
 
-import {increment} from "./increment.js";
-import {labels} from "./labels.js";
+import {increment} from "./increment";
+import {labels} from "./labels";
+import {transforms} from "./transforms";
 
 class KidGolden {
-	constructor (id = "", data = [{}], lang = "en-US", type = "") {
+	constructor (id = "", data = [{}], lang = "en-US", title = "", type = "") {
 		this.id = id;
 		this.data = data;
 		this.done = false;
 		this.lang = lang;
 		this.labels = labels.get(lang) || labels.get("en-US") || {};
-		this.prepared = [];
+		this.prepared = {};
 		this.output = "";
 		this.ready = true;
+		this.title = title;
 		this.type = type;
 
 		return this;
@@ -22,22 +24,21 @@ class KidGolden {
 		let result;
 
 		try {
-			this.prepared = (Array.isArray(this.data) ? this.data : [this.data]).map(i => {
-				return JSON.stringify(i);
-			});
-			this.data = null;
+			this.prepared = transforms.get(this.type)(this.title, Array.isArray(this.data) ? this.data : [this.data]);
 			result = true;
 		} catch (err) {
 			result = false;
 		}
+
+		this.data = null;
 
 		return result;
 	}
 
 	render () {
 		if (this.done === false && this.ready) {
-			this.output = JSON.stringify(this.prepared);
-			this.prepared.length = 0;
+			this.output = JSON.stringify(this.prepared, null, 2);
+			this.prepared = {};
 			this.done = true;
 			this.ready = false;
 		}
@@ -46,8 +47,8 @@ class KidGolden {
 	}
 }
 
-function kg ({data = [], id = `kg${increment()}`, lang = "en-US", type = ""} = {}) {
-	return new KidGolden(id, data, lang, type);
+function kg ({data = [], id = `kg${increment()}`, lang = "en-US", title = "", type = ""} = {}) {
+	return new KidGolden(id, data, lang, title, type);
 }
 
 export {kg};

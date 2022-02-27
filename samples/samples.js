@@ -16,12 +16,12 @@
 
 	async function display (type = "", el = {}, {title = "", description = "", data = []}) {
 		const tpl = templates.get("diagram").cloneNode(true),
-			lkg = kg({data, type});
+			lkg = kg({data, title, type});
 
 		if (lkg.process()) {
 			tpl.querySelector("h2").innerText = `${title} (${type})`;
 			tpl.querySelector("p").innerText = description;
-			tpl.querySelector("div[data-id='render']").innerHTML = lkg.render();
+			tpl.querySelector("div[data-id='render']").innerHTML = `<pre><code>${lkg.render()}</code></pre>`;
 
 			render(() => {
 				el.appendChild(tpl);
@@ -40,4 +40,4 @@
 			display(key, ctx, clone(val));
 		}
 	}
-}(window.requestAnimationFrame, console, kg.kg));
+}(window.requestAnimationFrame, console, window.kg.kg));

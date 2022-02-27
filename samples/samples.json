@@ -16,7 +16,7 @@
           ],
           "requires": [],
           "layer": [
-            "Service"
+            "Edge"
           ]
         },
         {
@@ -665,7 +665,7 @@
             "MONGO-003"
           ],
           "layer": [
-            "Service"
+            "Database"
           ]
         },
         {
@@ -678,7 +678,7 @@
             "MONGO-003"
           ],
           "layer": [
-            "Service"
+            "Database"
           ]
         },
         {
@@ -691,7 +691,7 @@
             "MONGO-002"
           ],
           "layer": [
-            "Service"
+            "Database"
           ]
         },
         {
@@ -701,7 +701,7 @@
           "children": [],
           "requires": [],
           "layer": [
-            "Service"
+            "Database"
           ]
         }
       ]

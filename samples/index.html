@@ -6,16 +6,43 @@
 		html, body {
 				margin: 0;
 				padding: 0;
-        min-height: 100%;
+        min-height: 100vh;
 		}
 
 		body {
 				background-color: white;
 				color: black;
 				font-size: 14px;
-				margin: 5em;
 				font-family: arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-content: stretch;
+        align-items: stretch;
 		}
+
+		body > * {
+        margin: 5em;
+		}
+
+		header {
+        order: 0;
+        flex: 0 1 auto;
+        align-self: auto;
+		}
+
+    section {
+        order: 2;
+        flex: 1 1 auto;
+        align-self: auto;
+    }
+
+    footer {
+        order: 3;
+        flex: 0 1 auto;
+        align-self: auto;
+    }
 
 		header, div.diagram {
 				margin-bottom: 5em;
@@ -23,14 +50,6 @@
 
 		section {
         column-count: 3;
-		}
-
-		section > * {
-        margin-right: 1em;
-		}
-
-		section > *:last-child {
-				margin-right: 0;
 		}
 
 		h1, h2, h3, h4, h5, h6, p, ol, ul {
@@ -60,6 +79,9 @@
 		<p>Data driven system diagrams with d3.js & simple JSON Arrays.</p>
 	</header>
 	<section></section>
+	<footer>
+		&copy; 2022 Jason Mulligan
+	</footer>
 	<template data-id="diagram">
 		<div class="diagram">
 			<h2>{{title}}</h2>

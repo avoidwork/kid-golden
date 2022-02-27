@@ -1,8 +1,6 @@
 "use strict";
 
-(async function () {
-	const render = window.requestAnimationFrame;
-
+(async function (render, console, kg) {
 	function log (arg = "", type = "log") {
 		console[type](typeof arg !== "object" ? `${new Date().getTime()}: ${arg.toString()}` : arg);
 	}
@@ -12,7 +10,7 @@
 
 		tpl.querySelector("h2").innerText = title;
 		tpl.querySelector("p").innerText = description;
-		tpl.querySelector("div[data-id='render']").innerHTML = `<pre><code>${JSON.stringify(data)}</code></pre>`;
+		kg(type, data, tpl.querySelector("div[data-id='render']"));
 
 		render(() => {
 			el.appendChild(tpl);
@@ -37,4 +35,4 @@
 			display(key, ctx, val);
 		}
 	}
-}());
+}(window.requestAnimationFrame, console, kg.kg));

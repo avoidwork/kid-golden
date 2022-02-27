@@ -3,7 +3,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 function sunburst$1 (id = "", arg = {}, width = 500, height = 500) {
-	return `<script>
+	return `<script type="application/javascript">
 // JSON data
 var nodeData = ${JSON.stringify(arg).replace(/^"|"$/g, "")};
 
@@ -138,11 +138,8 @@ class KidGolden {
 			this.ready = false;
 
 			if (this.target !== null) {
-				const frag = document.createDocumentFragment();
-
-				frag.innerHTML = `<svg data-id="${this.id}"></svg>
+				this.target.innerHTML = `<svg data-id="${this.id}"></svg>
 ${this.output}`;
-				this.target.appendChild(frag);
 			}
 		}
 

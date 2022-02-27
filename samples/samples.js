@@ -19,19 +19,13 @@
 			lkg = kg({data, title, type});
 
 		if (lkg.process()) {
-			const html = lkg.render();
-
 			tpl.querySelector("h2").innerText = `${title} (${type})`;
 			tpl.querySelector("p").innerText = description;
-			tpl.querySelector("div[data-id='preview']").innerHTML = `<pre>
-${lkg.render().replace(/script/g, "code")}
-</pre>`;
-			tpl.querySelector("div[data-id='sample']").innerHTML = html;
-
-			render(() => {
-				el.appendChild(tpl);
-				log(`Rendered ${type} diagram`);
-			});
+			lkg.target = tpl.querySelector("div.sample");
+			lkg.render();
+			//tpl.querySelector("code").innerHTML = clone(lkg.target.innerHTML).replace(/<(\/)?script(\s[^>]+)?>/g, "<$1code>");
+			el.appendChild(tpl);
+			log(`Rendered ${type} diagram`);
 		}
 	}
 

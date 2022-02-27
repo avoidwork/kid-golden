@@ -1,7 +1,7 @@
 "use strict";
 
 function sunburst (id = "", arg = {}, width = 500, height = 500) {
-	return `<script>
+	return `<script type="application/javascript">
 // JSON data
 var nodeData = ${JSON.stringify(arg).replace(/^"|"$/g, "")};
 

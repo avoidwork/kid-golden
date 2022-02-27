@@ -42,11 +42,8 @@ class KidGolden {
 			this.ready = false;
 
 			if (this.target !== null) {
-				const frag = document.createDocumentFragment();
-
-				frag.innerHTML = `<svg data-id="${this.id}"></svg>
+				this.target.innerHTML = `<svg data-id="${this.id}"></svg>
 ${this.output}`;
-				this.target.appendChild(frag);
 			}
 		}
 

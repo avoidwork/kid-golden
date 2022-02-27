@@ -17,7 +17,7 @@ export default [
 			},
 			{
 				file: 'dist/kg.js',
-				name: 'afm',
+				name: 'kg',
 				format: 'umd',
 				compact: true,
 				plugins: [terser()]

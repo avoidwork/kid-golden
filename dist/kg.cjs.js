@@ -28,7 +28,7 @@ const labels = new Map([
 ]);
 
 class KidGolden {
-	constructor (id = "", data = [], lang = "en-US") {
+	constructor (id = "", data = [{}], lang = "en-US") {
 		this.id = id;
 		this.data = data;
 		this.done = false;
@@ -70,7 +70,7 @@ class KidGolden {
 }
 
 function kg ({data = [], id = `kg${increment()}`, lang = "en-US"} = {}) {
-	return new KidGolden(data, id, lang);
+	return new KidGolden(id, data, lang);
 }
 
 exports.kg = kg;

@@ -46,7 +46,7 @@ class KidGolden {
 }
 
 function kg ({data = [], id = `kg${increment()}`, lang = "en-US"} = {}) {
-	return new KidGolden(data, id, lang);
+	return new KidGolden(id, data, lang);
 }
 
 export {kg};

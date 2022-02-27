@@ -1,19 +1,18 @@
 "use strict";
 
+import {diagrams} from "./diagrams";
 import {increment} from "./increment";
-import {labels} from "./labels";
 import {transforms} from "./transforms";
 
 class KidGolden {
-	constructor (id = "", data = [{}], lang = "en-US", title = "", type = "") {
+	constructor (id = "", data = [{}], target = null, title = "", type = "") {
 		this.id = id;
 		this.data = data;
 		this.done = false;
-		this.lang = lang;
-		this.labels = labels.get(lang) || labels.get("en-US") || {};
 		this.prepared = {};
 		this.output = "";
 		this.ready = true;
+		this.target = target;
 		this.title = title;
 		this.type = type;
 
@@ -37,18 +36,26 @@ class KidGolden {
 
 	render () {
 		if (this.done === false && this.ready) {
-			this.output = JSON.stringify(this.prepared, null, 2);
+			this.output = diagrams.get(this.type)(this.id, this.prepared);
 			this.prepared = {};
 			this.done = true;
 			this.ready = false;
+
+			if (this.target !== null) {
+				const frag = document.createDocumentFragment();
+
+				frag.innerHTML = `<svg data-id="${this.id}"></svg>
+${this.output}`;
+				this.target.appendChild(frag);
+			}
 		}
 
 		return this.output;
 	}
 }
 
-function kg ({data = [], id = `kg${increment()}`, lang = "en-US", title = "", type = ""} = {}) {
-	return new KidGolden(id, data, lang, title, type);
+function kg ({data = [], id = `kg${increment()}`, target = null, title = "", type = ""} = {}) {
+	return new KidGolden(id, data, target, title, type);
 }
 
 export {kg};

@@ -39,14 +39,23 @@ footer {
 	align-self: auto;
 }
 
-div.diagram {
+div[data-id="preview"], div[data-id="sample"] {
 	margin: 0 0 5em 0;
 	display: block;
+}
+
+pre {
+	overflow-x: auto;
 }
 
 h1, h2, h3, h4, h5, h6, p, ol, ul {
 	margin-top: 0;
 	padding-top: 0;
+}
+
+pre, code {
+	margin: 0;
+	padding: 0;
 }
 
 h1 {

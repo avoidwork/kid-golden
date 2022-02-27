@@ -15,16 +15,20 @@ function crawl (arg = {}, data = []) {
 
 function sunburst (name = "", data = []) {
 	const top = data.filter(i => i.parent.length === 0),
-		layers = Array.from(new Set(top.reduce((a, v) => [...a, ...v.layer], [])));
+		layers = Array.from(new Set(top.reduce((a, v) => [...a, ...v.layer], []))),
+		result = clone(tpl);
 
-	return layers.map(li => {
-		const result = clone(tpl);
+	result.name = name;
+	result.children = layers.map(li => {
+		const rli = clone(tpl);
 
-		result.name = li;
-		result.children = top.filter(ti => ti.layer.includes(li)).map(ti => crawl(ti, data));
+		rli.name = li;
+		rli.children = top.filter(ti => ti.layer.includes(li)).map(ti => crawl(ti, data));
 
-		return result;
+		return rli;
 	});
+
+	return result;
 }
 
 export {sunburst};

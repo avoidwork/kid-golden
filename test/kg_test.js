@@ -19,10 +19,6 @@ describe("Kid Golden instance - kg()", function () {
 		assert.strictEqual(lkg.data !== null, true);
 	});
 
-	it("should have a lang", function () {
-		assert.strictEqual(lkg.lang, "en-US");
-	});
-
 	it("should be ready", function () {
 		assert.strictEqual(lkg.ready === true, true);
 	});

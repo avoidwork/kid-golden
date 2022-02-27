@@ -20,6 +20,16 @@
           ]
         },
         {
+          "id": "RULES-001",
+          "label": "NGINX URI Rules",
+          "parent": [],
+          "children": [],
+          "requires": [],
+          "layer": [
+            "Edge"
+          ]
+        },
+        {
           "id": "NGINX-001",
           "label": "NGINX",
           "parent": [

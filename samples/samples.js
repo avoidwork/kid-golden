@@ -15,7 +15,7 @@
 			lkg = kg({data: arg, type});
 
 		if (lkg.process()) {
-			tpl.querySelector("h2").innerText = title;
+			tpl.querySelector("h2").innerText = `${title} (${type})`;
 			tpl.querySelector("p").innerText = description;
 			tpl.querySelector("div[data-id='render']").innerHTML = lkg.render();
 
